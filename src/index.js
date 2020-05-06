@@ -15,7 +15,7 @@ import firebase from './firebase/fbConfig'
 const rrfConfig = {
   useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB
   userProfile: 'users',
-  attachAuthIsReady: true,
+  attachAuthIsReady: true, // to wait fb before rendering
 };
 
 const store = createStore(rootReducer,
@@ -31,7 +31,9 @@ const rrfProps = {
   dispatch: store.dispatch,
   createFirestoreInstance, // Create firestore instead of craete it in fbConfig.js
 };
-    
+
+
+  
 
 ReactDOM.render(
   <Provider store={store}>
